@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "IDKPong": {
+            "applicationId": "q8PI6Fz3Wb5WJpsb3l9Re2vG06Ommv7jx5HtToJe", 
+            "masterKey": "lajBLNszFdPAk3LZqpavK0KUUNsEC0Jv8Qefcqrr"
+        }, 
+        "_default": {
+            "link": "IDKPong"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.4.2"
+    }
+}
