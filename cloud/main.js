@@ -11,8 +11,8 @@ Parse.Cloud.job("matches", function(request, status) {
         var cleanedText = lastText.message;
         var color = 'green';
 
-        if (lastText.message.match('\(\d-\d\).*') !== null) {
-        	cleanedText = lastText.message.match('\(\d-\d\).*').join('');
+        if (/\(\d-\d\)/.test(lastText.message)) {
+        	cleanedText = lastText.message.match(/\(\d-\d\).*/).join('');
     	}
 
     	if (cleanedText.search('tournament') !== -1) {
@@ -20,7 +20,7 @@ Parse.Cloud.job("matches", function(request, status) {
     		console.log(getData.results.titleRow[0].title);
     		cleanedText = cleanedText.replace(/This tournament/ig, getData.results.titleRow[0].title);
     	}
-    	console.log(cleanedText);
+
     	if (lastText.icon.alt === 'New') {
 			color = 'red';
     	} else if (lastText.icon.alt === 'Play') {
